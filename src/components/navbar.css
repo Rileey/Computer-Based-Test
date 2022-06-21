@@ -1,0 +1,56 @@
+.nav-container {
+    display: flex;
+    background-color: #c0dee8;
+    justify-content: space-between;
+
+}
+
+
+.title {
+    color: navy;
+    font-size: 30px;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+}
+.left {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: grey;
+}
+
+.user-name {
+    margin: 0 40px;
+    color: white;
+}
+
+.user-number {
+    margin: 0 40px;
+    color: white;
+}
+
+.submit {
+    font-size: 20px;
+    background: transparent;
+    color: #fff;
+    border: 0.5px solid white;
+    outline: none;
+    padding: 10px 20px;
+    cursor:pointer;
+    transition: 0.4s;
+}
+
+.submit:hover{
+    background: white;
+    color: grey;
+    border: none;
+}

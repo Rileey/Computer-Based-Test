@@ -1,0 +1,17 @@
+.right-container {
+    width: 70%;
+}
+
+.top-titl-e {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.create-button {
+    width: fit-content;
+}
+
+.create-button:hover {
+    border: 1px solid black;
+}

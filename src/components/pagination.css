@@ -1,0 +1,25 @@
+.container {
+   margin: 40px;
+}
+
+.pagination {
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+}
+
+.page-span {
+    border: 0.5px solid navy;
+    font-size: 15px;
+    background: white;
+    padding: 10px;
+    text-align: center;
+    margin: 5px;
+    border-radius:5px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.page-span:hover {
+    background: navy;
+    color: #fff;
+}
