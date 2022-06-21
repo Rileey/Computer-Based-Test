@@ -3,6 +3,7 @@ import { CountdownCircleTimer } from 'react-countdown-circle-timer'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Question from '../components/questions'
+import Quest from '../components/quest'
 import Pagination from '../components/pagination'
 // import { useParams } from 'react-router-dom'
 
@@ -41,18 +42,25 @@ const Exam = () => {
 
     return (
         <div className="exam-cont">
-            <Question 
+            {/* <Question 
+            totalQuestions={questions} 
+            questions={currentQuestion} 
+            loading={loading}
+            questionsPerPage={questionsPerPage} 
+            paginate={paginate}
+            /> */}
+            <Quest
             totalQuestions={questions} 
             questions={currentQuestion} 
             loading={loading}
             questionsPerPage={questionsPerPage} 
             paginate={paginate}
             />
-            <Pagination 
+            {/* <Pagination 
             questionsPerPage={questionsPerPage} 
             totalQuestions={questions.length} 
             paginate={paginate}
-            />
+            /> */}
         </div>
 
     )
