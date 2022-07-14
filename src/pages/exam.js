@@ -2,9 +2,8 @@ import './exam.css'
 import { CountdownCircleTimer } from 'react-countdown-circle-timer'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import Question from '../components/questions'
 import Quest from '../components/quest'
-import Pagination from '../components/pagination'
+import Countdown from '../components/countdown'
 // import { useParams } from 'react-router-dom'
 
 
@@ -29,13 +28,13 @@ const Exam = () => {
 
     if (questions.length === 0){
         return null
-    } 
-    console.log(questions)
+    }
 
     //get current questions
     const indexOfLastQuestion = currentPage * questionsPerPage;
     const indexOfFirstQuestion = indexOfLastQuestion - questionsPerPage;
     const currentQuestion = questions.slice(indexOfFirstQuestion, indexOfLastQuestion)
+
 
     //change page 
     const paginate = pageNumber => setCurrentPage(pageNumber)

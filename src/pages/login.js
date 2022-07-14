@@ -13,21 +13,21 @@ const Login = () => {
     const [random, setRandom] = useState([])
     const [submitted, setSubmitted] = useState(false)
     let navigate = useNavigate()
-    const { isFetching, error, dispatch } = useContext(AuthContext)
+    const { user, isFetching, error, dispatch } = useContext(AuthContext)
+    console.log("anthena:", error)
     
     const handleClick = async(e) => {
         e.preventDefault()
         setSubmitted(true)
         try {
             login({examnumber, password}, dispatch)
-            if (!examnumber|| !password) {
-                setMessage('Input all fields')
-            } else if (error){
-                setMessage('Incorrect email or password')
-            } else if (!error){
-                setMessage('Success')
+            if (error){
+                setMessage(error.data?.message)
             }
-            navigate('/')
+            if (!error) {
+                navigate('/')
+                setMessage(user.message)
+            }
             
         } catch (err) {
             console.log(err)
@@ -46,14 +46,14 @@ const Login = () => {
                             backgroundColor: 'black'
                         }}>{message}</p>) : null}
                         {submitted && !examnumber ?
-                            (<><label htmlFor="examNumber">examnumber</label><input type="number" className='red' placeholder='Please input the correct examNumber' autoComplete='false' onChange={(e) => setExamNumber(e.target.value)}/></>) :
-                            (<><label htmlFor="examNumber">examnumber</label><input type="number" placeholder='Your examNumber' onChange={(e) => setExamNumber(e.target.value)}/></>)
+                            (<><label htmlFor="examnumber" className='login-label'>examnumber</label><input type="number" className='blue' placeholder='examnumber cannot be empty' autoComplete='false' onChange={(e) => setExamNumber(e.target.value)}/></>) :
+                            (<><label htmlFor="examnumber" className='login-label'>examnumber</label><input type="number" className='initial' placeholder='examnumber' onChange={(e) => setExamNumber(e.target.value)}/></>)
                         }
                         {submitted && !password ?
-                            (<><label htmlFor="examNumber">Password</label><input type="password" className='red' placeholder='Please input the correct Password' autoComplete='false' onChange={(e) => setPassword(e.target.value)}/></>) :
-                            (<><label htmlFor="examNumber">Password</label><input type="password" placeholder='Your Password' onChange={(e) => setPassword(e.target.value)}/></>)
+                            (<><label htmlFor="password" className='login-label'>password</label><input type="password" className='blue' placeholder='password cannot be empty' autoComplete='false' onChange={(e) => setPassword(e.target.value)}/></>) :
+                            (<><label htmlFor="password" className='login-label'>password</label><input type="password" className='initial' placeholder='password' onChange={(e) => setPassword(e.target.value)}/></>)
                         }
-            <button onClick={handleClick}>Login</button>
+            <button onClick={handleClick} className='login-submit'>Login</button>
             </div>
         </div>
     )

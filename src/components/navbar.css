@@ -33,6 +33,11 @@
     color: white;
 }
 
+.user-name > strong {
+    color: white;
+    margin: 0;
+}
+
 .user-number {
     margin: 0 40px;
     color: white;

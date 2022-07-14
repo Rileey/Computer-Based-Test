@@ -14,3 +14,40 @@
     justify-content: center;
     align-items: center
 }
+
+.initial {
+    padding: 5px 20px;
+    border-radius: 10px;
+    border: none;
+    height: 30px;
+    width: 200px;
+}
+
+.login-label {
+    margin: 10px;
+    font-weight: 800;
+}
+
+.login-submit {
+    margin-top: 40px;
+    height: 40px;
+    width: 250px;
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+    color: navy;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.blue {
+    padding: 5px 20px;
+    border-radius: 10px;
+    border: none;
+    height: 30px;
+    width: 200px;
+}
+
+.blue::placeholder {
+    color: rgb(96, 114, 123);
+}
