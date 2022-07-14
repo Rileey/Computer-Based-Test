@@ -1,11 +1,11 @@
 .signup-container {
     background-color: black;
+    color: white;
     height: 100vh;
-    color: white
 }
 
 .signup-form-container {
-    padding-top: 200px
+    padding: 100px 10px;
 }
 
 .span {
@@ -23,6 +23,54 @@
     justify-content: center;
     margin: auto;
     background-color: black;
+}
+
+.name {
+    display: flex;
+}
+
+.firstname {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+}
+
+.lastname {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+}
+
+.signup-info {
+    display: flex;
+}
+
+.email {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+}
+
+.examnumber {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+}
+
+.pass {
+    display: flex;
+}
+
+.password {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+}
+
+.confirm {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
 }
 
 .log-login-input {

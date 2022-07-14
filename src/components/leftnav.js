@@ -1,6 +1,12 @@
 import './leftnav.css'
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../authContext/authContext'
+import { useContext } from 'react'
+
+
 const LeftNav = () => {
+
+    const { user } = useContext(AuthContext)
     return (
         <div className="left-nav container">
             <div className="titl-e">
@@ -11,7 +17,7 @@ const LeftNav = () => {
                     <img src="./stockphoto.jpeg" className="img" alt="" />
                 </div>
                 <div className="user">
-                    <span className="username">Deji</span>
+                    <span className="username">{user.data?.firstname} {user.data?.lastname}</span>
                 </div>
             </div>
             <div className="list">
@@ -25,12 +31,17 @@ const LeftNav = () => {
                     CreateQuiz
                 </div>
                 </Link>
-                <Link to="/">
+                <Link to="/editQuiz">
+                <div className="list-item">
+                    EditQuiz
+                </div>
+                </Link>
+                {/* <Link to="/">
                 <div className="list-item">
                     Dashboard
                 </div>
-                </Link>
-                <Link to="/quiz">
+                </Link> */}
+                <Link to="/">
                 <div className="list-item">
                     Quiz
                 </div>

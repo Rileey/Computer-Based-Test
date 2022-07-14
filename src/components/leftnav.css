@@ -1,6 +1,6 @@
 .left-nav {
     display: flex;
-    background-color: black;
+    background-color: #03035c;
     width: 30%;
     margin: 0;
     align-items: center;
@@ -27,7 +27,7 @@
 }
 
 .image-container {
-    margin-bottom: 100px;
+    margin-bottom: 60px;
 }
 
 .list-item {

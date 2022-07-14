@@ -1,0 +1,140 @@
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+.search-bar {
+    padding: 5px 20px;
+    border-radius: 10px;
+    border: none;
+    height: 50px;
+    width: 300px;
+}
+
+.quiz-list-container {
+    background-color: #7c9edc5e;
+    padding-bottom: 100px;
+}
+
+.quiz_image{
+    border: 1px solid black;
+    height: 100px;
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+.score-list-sub {
+    width: 80%;
+    margin: 10px auto;
+}
+
+.score-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 20px;
+    color: navy;
+}
+
+.file-upload-data{
+    font-size: 10px;
+}
+
+/* .ans {
+    cursor: pointer;
+}
+
+.ans-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.answers {
+    height: 30px;
+    width: 100px;
+}
+
+.back {
+
+} */
+
+.score-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 100;
+    font-size: 20px;
+}
+
+.trash {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 100;
+    font-size: 20px; 
+    cursor: pointer;
+    transition: 0.4s
+}
+
+.picture {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modd-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    padding-right: 50px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.trash:hover {
+    color: rgba(255, 4, 4, 0.605);
+    transition: 0.4s;
+}
+
+.question-list-item {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin: 20px auto;
+    background-color: white;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.questions-list-item {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin: 20px auto;
+    background-color: white;
+    height: 150px;
+    border-radius: 10px; 
+}
+
+.save {
+    height: fit-content;
+    width: 100px;
+    padding: 7px 10px;
+    background-color: navy;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin: auto;
+}
+
+table, th, td {
+    margin: 0 auto;
+    border: 1px solid black;
+}

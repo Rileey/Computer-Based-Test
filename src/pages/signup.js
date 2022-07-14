@@ -5,7 +5,8 @@ import { Link, useNavigate } from 'react-router-dom'
 
 
 const SignUp = () => {
-    const [name, setName] = useState('')
+    const [firstname, setFirstName] = useState('')
+    const [lastname, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confirmpassword, setConfirmPassword] = useState('')
@@ -13,7 +14,8 @@ const SignUp = () => {
     const [submitted, setSubmitted] = useState(false)
     const [random, setRandom] = useState([])
 
-    const nameRef = useRef();
+    const firstnameRef = useRef();
+    const lastnameRef = useRef();
     const emailRef = useRef();
     const passwordRef = useRef();
     const examNumberRef = useRef();
@@ -26,14 +28,16 @@ const SignUp = () => {
 
         if (
             emailRef.current.value &&
-            nameRef.current.value &&
+            firstnameRef.current.value &&
+            lastnameRef.current.value &&
             passwordRef.current.value  &&
             examNumberRef.current.value  &&
             confirmPasswordRef.current.value  &&
             confirmPasswordRef.current.value  === passwordRef.current.value 
 
             ) {
-                setName(nameRef.current.value)
+                setFirstName(firstnameRef.current.value)
+                setLastName(lastnameRef.current.value)
                 setEmail(emailRef.current.value)
                 setExamNumber(examNumberRef.current.value)
                 setPassword(passwordRef.current.value)
@@ -43,7 +47,8 @@ const SignUp = () => {
             
         
         const user = {
-            name: nameRef.current.value,
+            firstname: firstnameRef.current.value,
+            lastname: lastnameRef.current.value,
             email: emailRef.current.value,
             examnumber: examNumberRef.current.value,
             password: passwordRef.current.value,
@@ -63,29 +68,58 @@ const SignUp = () => {
             <div className="signup-form-container">
             <span className="span">Register!</span>
             <div className='sign-login-form'>
-                        
-                        {submitted && !nameRef.current.value ? (
-                            <><label htmlFor="name">fullname</label>
+                        <div className="name">
+                            <div className="firstname">
+                        {submitted && !firstnameRef.current.value ? (
+                            <><label htmlFor="name">firstname</label>
                             <input 
                             type="text"
                             required
                             placeholder="Please input your name" 
                             autoComplete="false" 
-                            className="log-login-input" 
-                            ref={nameRef} />
+                            className="blue" 
+                            ref={firstnameRef} />
                             </>
                         ) : (
-                            <><label htmlFor="name">fullname</label>
+                            <><label htmlFor="name">firstname</label>
                             <input 
                             type="text"
                             required
                             placeholder="Your name" 
                             autoComplete="false" 
-                            className="log-login-input" 
-                            ref={nameRef} />
+                            className="initial" 
+                            ref={firstnameRef} />
                             </>
                         )}
+                        </div>
+                        <div className="lastname">
+                        {submitted && !lastnameRef.current.value ? (
+                            <><label htmlFor="name">lastname</label>
+                            <input 
+                            type="text"
+                            required
+                            placeholder="Please input your name" 
+                            autoComplete="false" 
+                            className="blue" 
+                            ref={lastnameRef} />
+                            </>
+                        ) : (
+                            <><label htmlFor="name">lastname</label>
+                            <input 
+                            type="text"
+                            required
+                            placeholder="Your name" 
+                            autoComplete="false" 
+                            className="initial" 
+                            ref={lastnameRef} />
+                            </>
+                        )}
+                        </div>
+                        </div>
 
+
+                        <div className="signup-info">
+                            <div className="email">
                         { submitted && !emailRef.current.value ? 
                     (<><label htmlFor="name">email</label>
                     <input 
@@ -94,7 +128,7 @@ const SignUp = () => {
                     pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                     placeholder="Please input your email" 
                     autoComplete="false" 
-                    className="log-login-input" 
+                    className="blue" 
                     ref={emailRef} />
                     </>) :
                 (<><label htmlFor="name">email</label>
@@ -104,26 +138,33 @@ const SignUp = () => {
                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                 placeholder="Your email" 
                 autoComplete="false" 
-                className="log-login-input" 
+                className="initial" 
                 ref={emailRef} />
                 </>
                 )}
+                </div>
 
-
+                            <div className="examnumber">
                         { submitted && 
                         !examNumberRef.current.value ?
-                    (<><label htmlFor="name">examNumber</label><input type="input" name='number' placeholder="Please input your exam number" autoComplete="false" className="log-login-input" ref={examNumberRef} /></>) : 
-                    (<><label htmlFor="name">examNumber</label><input type="input" name='number' placeholder="Your exam number" autoComplete="false" className="log-login-input" ref={examNumberRef} /></>)}
+                    (<><label htmlFor="name">examNumber</label><input type="input" name='number' placeholder="Please input your exam number" autoComplete="false" className="blue" ref={examNumberRef} /></>) : 
+                    (<><label htmlFor="name">examNumber</label><input type="input" name='number' placeholder="Your exam number" autoComplete="false" className="initial" ref={examNumberRef} /></>)}
+                    </div>
+                    </div>
 
+                        <div className="pass">
+                            <div className="password">
                         {submitted && !passwordRef.current.value ? 
-                        (<><label htmlFor="name">password</label><input type="password" name="password" placeholder="Please input your password" autoComplete="false" className="log-login-input" ref={passwordRef} /></>) :
+                        (<><label htmlFor="name">password</label><input type="password" name="password" placeholder="Please input your password" autoComplete="false" className="blue" ref={passwordRef} /></>) :
                         submitted && confirmPasswordRef.current.value !== passwordRef.current.value ? 
-                        (<><label htmlFor="name">password</label><input type="text" name="password" value="Input the correct password" autoComplete="false" className="log-login-input" ref={passwordRef} /></>) :
-                        (<><label htmlFor="name">password</label><input type="password" name="password" placeholder="Your password" autoComplete="false" className="log-login-input" ref={passwordRef} /></>)}
-
+                        (<><label htmlFor="name">password</label><input type="text" name="password" value="Input the correct password" autoComplete="false" className="blue" ref={passwordRef} /></>) :
+                        (<><label htmlFor="name">password</label><input type="password" name="password" placeholder="Your password" autoComplete="false" className="initial" ref={passwordRef} /></>)}
+                        </div>
+                        <div className="confirm">
                         <label htmlFor="name">confirm Password</label>
-                        <input type="password" name='confirmPassword' placeholder="confirm Password" autoComplete="false" className="log-login-input" ref={confirmPasswordRef} />
-                        
+                        <input type="password" name='confirmPassword' placeholder="confirm Password" autoComplete="false" className="initial" ref={confirmPasswordRef} />
+                        </div>
+                        </div>
                         <button className="logins-button" onClick={handleFinish}>Register</button>
                     </div>
                 </div>
